@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: antiquewhite;
+  background-color: rgba(214, 232, 245, 0.5);
+  margin: 0px;
+  padding: 0px;
+}
+
+/*==== This part refers to the index.html (home Page) ====*/
+
+.home-page {
+  background-image: url("personal_image.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width:900px){
+  .home-page{
+    background-image: url("portfolio_image.jpeg");
+  }
+}
+
+.user { 
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0.2rem;
+}
+
+.user p {
+  opacity: 1;
+  margin-left: 1rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 80px;
+  background-color: rgba(7, 15, 43, 1);
+  padding: .4rem .8rem;
+  transition: all 0.5s ease;
+  z-index: 400;
+}
+
+.sidebar.active {
+  width: 250px;
+}
+
+.sidebar #btn {
+  position: relative;
+  top: .4rem;
+  left: 50%;
+  font-size: 1.2rem;
+  line-height: 50px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.sidebar.active #btn {
+  left: 90%;
+}
+
+.sidebar p {
+  opacity: 0;
+}
+
+.sidebar.sidebar.active p {
+  opacity: 1;
+  transition: 1s;
+}
+
+.sidebar ul li {
+  position: relative;
+  list-style-type: none;
+  height: 50px;
+  width: 90%;
+  margin: 0.8rem auto;
+  line-height: 50px;
+}
+
+.sidebar ul li a {
+  color: antiquewhite;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover {
+  background-color: rgb(37, 150, 190);
+  color: rgb(249, 248, 113, 1);
+  transition: color 0.15s;
+}
+
+.sidebar ul li a i {
+  min-width: 50px;
+  text-align: center;
+  height: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+}
+
+.sidebar .bar-text {
+  opacity: 0;
+}
+
+.sidebar.active .bar-text {
+  opacity: 1;
+  transition: 1s;
+}
+
+.sidebar ul li .tooltip {
+  position: absolute;
+  left: 125px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(235, 238, 255, 1);
+  color: black;
+  box-shadow: 0 0.5rem 0.8rem rgba(202, 197, 197, 0.233);
+  border-radius: .6rem;
+  padding: .4rem 1.2rem;
+  line-height: 1.8rem;
+  z-index: 500;
+  opacity: 0;
+}
+
+.sidebar ul li:hover .tooltip {
+  opacity: 1;
+}
+
+.sidebar.active ul li .tooltip {
+  display: none;
+}
+
+.sidebar.active ~ .phrase {
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.phrase {
+  position: relative;
+  min-height: 100vh;
+  top: 0;
+  left: 80px;
+  transition: all 0.5s ease;
+  width: calc(100% - 80px);
+  padding: 1rem;
+}
+
+/*==== This part refers to the sobre.html (sobre Page) ====*/
+#source{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  color: black;
+  position: relative;
+  min-height: 100vh;
+  top: 0;
+  left: 80px;
+  transition: all 0.5s ease;
+  width: calc(100% - 80px);
+  padding: 1rem;
+}
+
+.about-myself{
+  color: black;
+  position: relative;
+  min-height: 100vh;
+  top: 8em;
+  transition: all 0.5s ease;
+  width: calc(100% - 80px);
+  padding: 1rem;
+  text-align: initial; 
+}
+
+
+.sidebar.active ~ div#source{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.phrase-sobre {
+  color: black;
+  position: relative;
+  min-height: 100vh;
+  top: 0;
+  transition: all 0.5s ease;
+  width: calc(100% - 80px);
+}
+
+.sidebar.active ~ .phrase-sobre{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+
+.myself {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  margin: 0.2rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.1);
+}
+
+@media (max-width: 910px){
+  .myself {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    margin: 0.2rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.1);
+  }
+
+  #source {
+    flex-direction: column;
+  }
+
+  .about-myself {
+    top: -315px;
+  }
+
+}
+
+@media (max-width: 530px){
+  .about-myself {
+    top: -280px;
+  }
+
+  .medias{
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 410px){
+  .about-myself{
+    top: -100px;
+  }
+}
+
+
+.title {
+  margin: 10px;
+}
+
+.medias a {
+  text-decoration: none;
+  font-size: 30.5px;
+  color: rgb(18, 144, 194);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.15);
+}
+
+.medias:visited {
+  color: none;
+}
+
+/*==== This part refers to the curriculo.html (currículo Page) ====*/
+
+.phrase-curriculo {
+  color: black;
+  position: relative;
+  min-height: 100vh;
+  top: 0;
+  left: 80px;
+  transition: all 0.5s ease;
+  width: calc(100% - 80px);
+  padding: 1rem;
+}
+
+.sidebar.active ~ .phrase-curriculo {
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.icon-curriculo {
+  padding: 1rem;
+}
+
+.icon-curriculo i {
+  font-size: 80px;
+  padding: 1rem;
+}
+
+.icon-curriculo ul li {
+  top: 1rem;
+  text-align: justify;
+  padding: 1rem;
+}
